@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Flappy Bird: Hall of Fame</title>
+    <title>Neon Flap: Industrial Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="game-container">
-    <canvas id="gameCanvas" width="400" height="600"></canvas>
+    <canvas id="gameCanvas"></canvas>
 
-    <div id="hud">
+    <div id="hud" class="hidden">
         <div id="score-display">0</div>
     </div>
-    <button id="pause-btn">❚❚</button>
+
+    <button id="pause-btn" class="hidden">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16"/>
+            <rect x="14" y="4" width="4" height="16"/>
+        </svg>
+    </button>
 
     <div id="menu-screen" class="ui-layer">
         <div class="ui-content">
-            <h1>Flappy Bird</h1>
-            <h2>Hall of Fame</h2>
-            <button id="btn-start" class="primary">New Game</button>
-            <button id="btn-resume" class="secondary" disabled>Resume</button>
-
-            <div class="hof-section">
-                <h3>Top Scores</h3>
-                <ul id="hof-list" class="hof-list"></ul>
-            </div>
-
-            <p class="mobile-hint">Tap or Press Space to Jump</p>
+            <h1>NEON FLAP</h1>
+            <p class="high-score-label">High Score: <span id="menu-highscore" class="highlight">0</span></p>
+            <button id="btn-start" class="primary">Start Run</button>
+            <button id="btn-resume" disabled>Resume</button>
         </div>
     </div>
 
     <div id="gameover-screen" class="ui-layer hidden">
         <div class="ui-content">
-            <h1 class="danger-text">Crashed!</h1>
-            <h2 id="final-score">Score: 0</h2>
-            <button id="btn-restart" class="primary">Try Again</button>
-            <button id="btn-home" class="secondary">Home</button>
+            <h1 class="crash-text">CRASHED</h1>
+            <p class="score-label">Score: <span id="final-score" class="highlight">0</span></p>
+            <button id="btn-restart" class="primary">Restart</button>
+            <button id="btn-home">Main Menu</button>
         </div>
     </div>
 </div>
 
-<script src="js/audio.js"></script>
-<script src="js/storage.js"></script>
-<script src="js/game.js"></script>
+<script src="game.js"></script>
 
 </body>
 </html>
